@@ -57,7 +57,7 @@ print('-----------------------------------')
 
 # حذف واژه های اسپارس
 stop_words = set(nltk.corpus.stopwords.words('english'))
-result = [i for i in tokens if not i in stop_words]
+input_str = [i for i in tokens if not i in stop_words]
 print('حذف واژگان اسپارس : \n' , input_str)
 
 print('-----------------------------------')
