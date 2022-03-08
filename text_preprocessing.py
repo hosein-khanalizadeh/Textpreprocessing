@@ -57,15 +57,15 @@ print('-----------------------------------')
 
 # حذف واژه های اسپارس
 stop_words = set(nltk.corpus.stopwords.words('english'))
-input_str = [i for i in tokens if not i in stop_words]
-print('حذف واژگان اسپارس : \n' , input_str)
+result = [i for i in tokens if not i in stop_words]
+print('حذف واژگان اسپارس : \n' , result)
 
 print('-----------------------------------')
 
 # ریشه یابی کلمات 1
 stemmer = nltk.stem.PorterStemmer()
 print('ریشه یابی ساقه : \n')
-for word in tokens:
+for word in result:
     print(word , ' : ' , stemmer.stem(word))
 
 print('-----------------------------------')
@@ -73,12 +73,13 @@ print('-----------------------------------')
 # ریشه یابی کلمات 2
 lemmatizer = nltk.stem.WordNetLemmatizer()
 print('ریشه یابی لماتیزه کننده : \n')
-for word in tokens:
+for word in result:
     print(word , ' : ' , lemmatizer.lemmatize(word))
 
 print('-----------------------------------')
 
 # برچسب گذاری نقش دستوری
+input_str = ' '.join(result)
 print('برپسب گذاری نقش دستوری : \n')
 tokenized = nltk.tokenize.sent_tokenize(input_str)
 for i in tokenized:
